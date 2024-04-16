@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "26515573776",
+    "project_id": "twitch-clone-testing",
+    "storage_bucket": "twitch-clone-testing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26515573776:android:4b43ccc7482598ddf18e95",
+        "android_client_info": {
+          "package_name": "com.example.live_streaming_testing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0My0sGt3Zr8-WbPinRhUkB-YdVdiXW28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
