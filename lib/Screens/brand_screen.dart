@@ -164,7 +164,7 @@ class ProductCardVertical extends StatelessWidget {
                     width: 100,
                     height: 100,
                     imageUrl: 'images/shoes.png',
-                    backgroundColor: Colors.grey.shade400,
+                    backgroundColor: Colors.grey.shade400, borderRadius: 24,
                   ),
                   TRoundedContainer(
                     radius: 10,

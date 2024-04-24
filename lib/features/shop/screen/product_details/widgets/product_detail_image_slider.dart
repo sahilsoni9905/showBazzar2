@@ -22,7 +22,7 @@ class TProductImageSlider extends StatelessWidget {
             TImages.productImage2,
             TImages.productImage3,
             TImages.productImage4,
-          ],
+          ], liveText: '', viewText: '', logoImage: '',
         ),
         Positioned(
           right: 0,
@@ -42,7 +42,7 @@ class TProductImageSlider extends StatelessWidget {
                 width: 70,
                 backgroundColor: TColors.primary,
                 border: Border.all(color: TColors.primary),
-                padding: const EdgeInsets.all(TSizes.sm),
+                padding: const EdgeInsets.all(TSizes.sm), borderRadius: 24,
               ),
             ),
           ),

@@ -8,7 +8,9 @@ import 'package:show_bazzar/Widgets/main_drawer.dart';
 import 'package:show_bazzar/features/shop/screen/home/widgets/promo_slider.dart';
 import 'package:show_bazzar/paymentProcess/cart_page.dart';
 
-
+import '../Settings/home/widgets/filter_bottom_sheet.dart';
+import '../Stream/stream_components/stream_colors.dart';
+import '../core/utils/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -16,8 +18,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: StremColors.streamBackground,
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade900,
+        backgroundColor: const Color(0xFF070F2B),
         foregroundColor: Colors.white,
         elevation: 5,
         shadowColor: Colors.black,
@@ -33,19 +36,64 @@ class HomeScreen extends StatelessWidget {
             },
             icon: const Icon(Icons.wallet),
           ),
-          IconButton(onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (ctx) => const cartPage(),
-              ),
-            );
-          }, icon: const Icon(Icons.shopping_cart)),
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (ctx) => const cartPage(),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.shopping_cart)),
         ],
       ),
       drawer: const HomeDrawer(),
+      floatingActionButton:  Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(height: 40,
+            child: FloatingActionButton.extended(
+
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return FilterBottomSheet();
+                  },
+                );
+              },
+              label: const Text(
+                'Filter',
+                style: TextStyle(fontSize: 15),
+              ),
+              icon: const Icon(
+                Icons.filter_alt_outlined,
+                size: 20,
+              ),
+            ),
+          ),
+          const SizedBox(width: 16), // Add some space between the buttons
+          SizedBox(
+            height: 40,
+            child: FloatingActionButton.extended(
+              onPressed: () {
+                // Add onPressed action for the second floating action button
+              },
+              label: const Text(
+                'Sort',
+                style: TextStyle(fontSize: 15),
+              ),
+              icon: const Icon(
+                Icons.sort_outlined,
+                size: 20,
+              ),
+            ),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Container(
-          color: Colors.blue.shade900,
+          color: const Color(0xFF070F2B),
           // decoration: BoxDecoration(
           //     gradient: LinearGradient(
           //         begin: Alignment.centerLeft,
@@ -56,12 +104,15 @@ class HomeScreen extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  const SizedBox(width: 30,),
+                  const SizedBox(
+                    width: 30,
+                  ),
                   Column(
                     children: [
                       TextButton(
                         onPressed: () {},
-                        style: ButtonStyle(elevation: MaterialStateProperty.all(2)),
+                        style: ButtonStyle(
+                            elevation: MaterialStateProperty.all(2)),
                         child: const Text(
                           'Bazzar',
                           style: TextStyle(
@@ -85,7 +136,7 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (ctx) =>  const StreamHomePage(),
+                          builder: (ctx) => const StreamHomePage(),
                         ),
                       );
                     },
@@ -120,7 +171,7 @@ class HomeScreen extends StatelessWidget {
               ),
               const TTopStoresSlide(),
               Padding(
-                padding: EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.only(left: 20),
                 child: Text(
                   'Categories',
                   textAlign: TextAlign.left,
@@ -133,12 +184,18 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-               const TCategoriesSlide(radius: 100, height:56.0, width: 56.0, heighttext: 80, title: 'Store',),
+              const TCategoriesSlide(
+                radius: 100,
+                height: 56.0,
+                width: 56.0,
+                heighttext: 80,
+                title: 'Store',
+              ),
               const SizedBox(
                 height: 16,
               ),
-               const Padding(
-                padding: EdgeInsets.all(24),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24),
                 child: TPromoSlider(
                   width: 380,
                   height: 240,
@@ -148,10 +205,15 @@ class HomeScreen extends StatelessWidget {
                     'images/shoes/shoe3.png',
                     'images/shoes/shoe4.png'
                   ],
+                  liveText: 'Nike India is live',
+                  viewText: '300k+ Views',
+                  logoImage: 'images/nike.jpg',
                 ),
               ),
-               const SizedBox(height: 16,),
-               const Padding(
+              // const SizedBox(
+              //   height: TSizes.spaceBtwItems / 16,
+              // ),
+              const Padding(
                 padding: EdgeInsets.all(24),
                 child: TPromoSlider(
                   width: 380,
@@ -162,12 +224,48 @@ class HomeScreen extends StatelessWidget {
                     'images/shoes/shoe2.png',
                     'images/shoes/shoe3.png',
                   ],
+                  liveText: 'Nike India is live',
+                  viewText: '300k+ Views',
+                  logoImage: 'images/nike.jpg',
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(16),
+                child: TPromoSlider(
+                  width: 380,
+                  height: 240,
+                  banners: [
+                    'images/shoes/shoe1.png',
+                    'images/shoes/shoe2.png',
+                    'images/shoes/shoe3.png',
+                    'images/shoes/shoe4.png'
+                  ],
+                  liveText: 'Nike India is live',
+                  viewText: '300k+ Views',
+                  logoImage: 'images/nike.jpg',
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(16),
+                child: TPromoSlider(
+                  width: 380,
+                  height: 240,
+                  banners: [
+                    'images/shoes/shoe1.png',
+                    'images/shoes/shoe2.png',
+                    'images/shoes/shoe3.png',
+                    'images/shoes/shoe4.png'
+                  ],
+                  liveText: 'Nike India is live',
+                  viewText: '300k+ Views',
+                  logoImage: 'images/nike.jpg',
                 ),
               ),
 
             ],
           ),
         ),
+
       ),
     );
   }

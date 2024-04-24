@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:show_bazzar/Screens/forget_password.dart';
 import 'package:show_bazzar/Screens/home_screen.dart';
 import 'package:show_bazzar/Screens/register_screen.dart';
 import 'package:show_bazzar/Settings/bottom_bar.dart';
@@ -116,9 +117,16 @@ class LogInScreen extends StatelessWidget {
                                 const SizedBox(
                                   height: 16,
                                 ),
-                                const Text(
-                                  'Forgot Password?',
-                                  style: TextStyle(color: Colors.lightBlue),
+                                 TextButton(
+                                  child: Text('Forgot Password?',style: TextStyle(color: Colors.lightBlue),),
+                                  onPressed: (){
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (ctx) => const ForgetPasswordScreen(),
+                                      ),
+                                    );
+                                  },
+
                                 ),
                                 const SizedBox(
                                   height: 16,

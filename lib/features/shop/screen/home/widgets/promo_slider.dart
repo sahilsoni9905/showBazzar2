@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:show_bazzar/Widgets/Common%20Widgets/trounded_container.dart';
+import 'package:show_bazzar/core/utils/constants/sizes.dart';
 import 'package:show_bazzar/features/shop/controllers/home_controller.dart';
 
 import '../../../../../Widgets/Common Widgets/trounded_image.dart';
@@ -11,11 +12,14 @@ class TPromoSlider extends StatelessWidget {
     super.key,
     required this.banners,
     required this.width,
-    required this.height,
+    required this.height, required this.liveText, required this.viewText, required this.logoImage,
   });
 
   final List<String> banners;
   final double width, height;
+  final String liveText;
+  final String viewText;
+  final String logoImage;
 
   @override
   Widget build(BuildContext context) {
@@ -31,14 +35,12 @@ class TPromoSlider extends StatelessWidget {
             .map((url) => TRoundedImage(
                   imageUrl: url,
                   width: width,
-                  height: height,
+                  height: height, borderRadius: 24,
                 ))
             .toList(),
       ),
-      const SizedBox(
-        height: 16,
-      ),
-      Obx(
+
+      /*Obx(
         () => Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -52,6 +54,32 @@ class TPromoSlider extends StatelessWidget {
                     ? Theme.of(context).colorScheme.primary
                     : Colors.white,
               ),
+          ],
+        ),
+      )*/
+      Container(
+        width: 380,
+        height: 70,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.black.withOpacity(0.5)),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Row(
+              children: [
+                ClipRRect(
+                  child: TRoundedImage(width: 50, imageUrl: 'images/nike.jpg', borderRadius: 18,)
+                ),
+              ],
+            ),
+             const SizedBox(width: TSizes.spaceBtwItems/2,),
+             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(liveText, style: const TextStyle(color: Colors.white),),
+                Text(viewText, style: const TextStyle(color: Colors.white),),
+              ],
+            )
           ],
         ),
       )
