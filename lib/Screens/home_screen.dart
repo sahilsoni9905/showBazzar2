@@ -48,49 +48,49 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       drawer: const HomeDrawer(),
-      floatingActionButton:  Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(height: 40,
-            child: FloatingActionButton.extended(
-
-              onPressed: () {
-                showModalBottomSheet(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return FilterBottomSheet();
-                  },
-                );
-              },
-              label: const Text(
-                'Filter',
-                style: TextStyle(fontSize: 15),
-              ),
-              icon: const Icon(
-                Icons.filter_alt_outlined,
-                size: 20,
-              ),
-            ),
-          ),
-          const SizedBox(width: 16), // Add some space between the buttons
-          SizedBox(
-            height: 40,
-            child: FloatingActionButton.extended(
-              onPressed: () {
-                // Add onPressed action for the second floating action button
-              },
-              label: const Text(
-                'Sort',
-                style: TextStyle(fontSize: 15),
-              ),
-              icon: const Icon(
-                Icons.sort_outlined,
-                size: 20,
-              ),
-            ),
-          ),
-        ],
-      ),
+      // floatingActionButton:  Row(
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   children: [
+      //     SizedBox(height: 40,
+      //       child: FloatingActionButton.extended(
+      //
+      //         onPressed: () {
+      //           showModalBottomSheet(
+      //             context: context,
+      //             builder: (BuildContext context) {
+      //               return FilterBottomSheet();
+      //             },
+      //           );
+      //         },
+      //         label: const Text(
+      //           'Filter',
+      //           style: TextStyle(fontSize: 15),
+      //         ),
+      //         icon: const Icon(
+      //           Icons.filter_alt_outlined,
+      //           size: 20,
+      //         ),
+      //       ),
+      //     ),
+      //     const SizedBox(width: 16), // Add some space between the buttons
+      //     SizedBox(
+      //       height: 40,
+      //       child: FloatingActionButton.extended(
+      //         onPressed: () {
+      //           // Add onPressed action for the second floating action button
+      //         },
+      //         label: const Text(
+      //           'Sort',
+      //           style: TextStyle(fontSize: 15),
+      //         ),
+      //         icon: const Icon(
+      //           Icons.sort_outlined,
+      //           size: 20,
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
       body: SingleChildScrollView(
         child: Container(
           color: const Color(0xFF070F2B),
