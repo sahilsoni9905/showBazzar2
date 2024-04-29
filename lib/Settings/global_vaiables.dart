@@ -23,3 +23,19 @@ final gridShoesImageUrls = [
   'https://th.bing.com/th/id/OIP.JzRA4PAqbXBdv8INGyUH9QAAAA?w=202&h=296&c=7&r=0&o=5&dpr=1.3&pid=1.7',
   'https://th.bing.com/th/id/OIP.lnbkLKDhylkOEAp6n_zuTAHaKa?w=202&h=285&c=7&r=0&o=5&dpr=1.3&pid=1.7',
 ];
+final listTopStoreImage = [
+  'https://prod.cloud.rockstargames.com/crews/sc/8437/12192665/publish/emblem/emblem_512.png',
+  'https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-apple-praised-after-new-product-reveal-investor-32.png',
+  'https://static.vecteezy.com/system/resources/previews/022/101/041/original/hp-logo-transparent-free-png.png',
+  'https://th.bing.com/th/id/OIP.lqao_2ss6PjNd9CYGLT9WgAAAA?rs=1&pid=ImgDetMain',
+  'https://th.bing.com/th/id/OIP.lqao_2ss6PjNd9CYGLT9WgAAAA?rs=1&pid=ImgDetMain',
+  'https://th.bing.com/th/id/OIP.lqao_2ss6PjNd9CYGLT9WgAAAA?rs=1&pid=ImgDetMain'
+];
+final listTopCategories = [
+  'https://www.clipartmax.com/png/middle/262-2621895_cell-phone-clipart-transparent-mobile-logo-png-transparent-background.png',
+  'https://th.bing.com/th/id/OIP.LNU7U4kgvKZIl3d1ueDWuAHaFm?rs=1&pid=ImgDetMain',
+  'https://cdn.dribbble.com/users/2409752/screenshots/12869808/untitled-9_4x.jpg',
+  'https://static.vecteezy.com/system/resources/previews/000/357/510/original/watch-vector-icon.jpg',
+  'https://cdn.imgbin.com/6/19/16/imgbin-cosmetics-sephora-beauty-make-up-artist-makeup-brush-cosmetic-products-PswBQn2jS2GMg0ynQ6ZFKev7g.jpg',
+  'https://cdn.imgbin.com/6/19/16/imgbin-cosmetics-sephora-beauty-make-up-artist-makeup-brush-cosmetic-products-PswBQn2jS2GMg0ynQ6ZFKev7g.jpg',
+];

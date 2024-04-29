@@ -205,7 +205,7 @@ class HomeScreen extends StatelessWidget {
                     'images/shoes/shoe3.png',
                     'images/shoes/shoe4.png'
                   ],
-                  liveText: 'Nike India is live',
+                  liveText: 'Nike India is Live',
                   viewText: '300k+ Views',
                   logoImage: 'images/nike.jpg',
                 ),
@@ -219,14 +219,14 @@ class HomeScreen extends StatelessWidget {
                   width: 380,
                   height: 240,
                   banners: [
-                    'images/shoes/shoe4.png',
-                    'images/shoes/shoe1.png',
-                    'images/shoes/shoe2.png',
-                    'images/shoes/shoe3.png',
+                    'assets/images/banners/iphone.jpeg',
+                    'assets/images/banners/iphone.jpeg',
+                    'assets/images/banners/iphone.jpeg',
+                    'assets/images/banners/iphone.jpeg',
                   ],
-                  liveText: 'Nike India is live',
+                  liveText: 'Apple India is Live',
                   viewText: '300k+ Views',
-                  logoImage: 'images/nike.jpg',
+                  logoImage: 'images/appleLogo.jpg',
                 ),
               ),
               const Padding(
@@ -235,14 +235,14 @@ class HomeScreen extends StatelessWidget {
                   width: 380,
                   height: 240,
                   banners: [
-                    'images/shoes/shoe1.png',
-                    'images/shoes/shoe2.png',
-                    'images/shoes/shoe3.png',
-                    'images/shoes/shoe4.png'
+                    'images/hp.webp',
+                    'images/hp.webp',
+                    'images/hp.webp',
+                    'images/hp.webp',
                   ],
-                  liveText: 'Nike India is live',
+                  liveText: 'HP India is live',
                   viewText: '300k+ Views',
-                  logoImage: 'images/nike.jpg',
+                  logoImage: 'images/hpLogo.png',
                 ),
               ),
               const Padding(
@@ -251,21 +251,19 @@ class HomeScreen extends StatelessWidget {
                   width: 380,
                   height: 240,
                   banners: [
-                    'images/shoes/shoe1.png',
-                    'images/shoes/shoe2.png',
-                    'images/shoes/shoe3.png',
-                    'images/shoes/shoe4.png'
+                    'images/levis.jpeg',
+                    'images/levis.jpeg',
+                    'images/levis.jpeg',
+                    'images/levis.jpeg',
                   ],
-                  liveText: 'Nike India is live',
+                  liveText: 'Levis India is live',
                   viewText: '300k+ Views',
-                  logoImage: 'images/nike.jpg',
+                  logoImage: 'images/Levis-Logo.png',
                 ),
               ),
-
             ],
           ),
         ),
-
       ),
     );
   }
