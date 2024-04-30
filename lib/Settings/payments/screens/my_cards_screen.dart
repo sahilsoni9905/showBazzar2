@@ -25,7 +25,7 @@ class MyCardsScreen extends StatelessWidget {
           'My Cards',
           style: TextStyle(color: Colors.white),
         ),
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -54,7 +54,7 @@ class MyCardsScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Cardholder Name',
                       style: TextStyle(color: Colors.white),
                     ),
@@ -65,7 +65,7 @@ class MyCardsScreen extends StatelessWidget {
                     const SizedBox(
                       height: 25,
                     ),
-                    Text(
+                    const Text(
                       'Card Number',
                       style: TextStyle(color: Colors.white),
                     ),
@@ -82,8 +82,8 @@ class MyCardsScreen extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'Card Number',
+                            const Text(
+                              'CVV',
                               style: TextStyle(color: Colors.white),
                             ),
                             SizedBox(
@@ -98,7 +98,7 @@ class MyCardsScreen extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               'Exp. Date',
                               style: TextStyle(color: Colors.white),
                             ),

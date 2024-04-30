@@ -12,6 +12,7 @@ import 'package:show_bazzar/features/shop/screen/home/widgets/promo_slider.dart'
 import '../Settings/company_details/widgets/image_container.dart';
 import '../Settings/company_details/widgets/shoes_image_builder.dart';
 import '../Settings/global_vaiables.dart';
+import '../Settings/home/widgets/filter_bottom_sheet.dart';
 
 class BrandScreen extends StatelessWidget {
   static const routeName = '/company-detail-screen';
@@ -29,6 +30,43 @@ class BrandScreen extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         iconTheme: const IconThemeData(color: Colors.black),
+      ),
+      floatingActionButton:  Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          FloatingActionButton.extended(
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (BuildContext context) {
+                  return FilterBottomSheet();
+                },
+              );
+            },
+            label: Text(
+              'Filter',
+              style: TextStyle(fontSize: 20),
+            ),
+            icon: Icon(
+              Icons.filter_alt_outlined,
+              size: 30,
+            ),
+          ),
+          SizedBox(width: 16), // Add some space between the buttons
+          FloatingActionButton.extended(
+            onPressed: () {
+              // Add onPressed action for the second floating action button
+            },
+            label: Text(
+              'Sort',
+              style: TextStyle(fontSize: 20),
+            ),
+            icon: Icon(
+              Icons.sort_outlined,
+              size: 30,
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -164,7 +202,7 @@ class ProductCardVertical extends StatelessWidget {
                     width: 100,
                     height: 100,
                     imageUrl: 'images/shoes.png',
-                    backgroundColor: Colors.grey.shade400,
+                    backgroundColor: Colors.grey.shade400, borderRadius: 24,
                   ),
                   TRoundedContainer(
                     radius: 10,

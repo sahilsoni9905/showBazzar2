@@ -14,7 +14,7 @@ class TRoundedImage extends StatelessWidget {
     this.padding,
     this.isNetworkImage = false,
     this.onPressed,
-    this.borderRadius = 24,
+    required this.borderRadius,
   });
 
   final double? width, height;
