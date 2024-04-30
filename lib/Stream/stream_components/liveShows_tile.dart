@@ -25,7 +25,6 @@ class liveShowsTile extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-            width: 300,
             height: 180,
             child: GestureDetector(
               onTap: () {
@@ -84,6 +83,7 @@ class liveShowsTile extends StatelessWidget {
                   children: [
                     Text(
                       truncatedLiveNowTitle(liveShows.title),
+                      softWrap: true,
                       style: const TextStyle(color: Colors.white, fontSize: 20),
                     ),
                     Text(

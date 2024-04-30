@@ -107,7 +107,7 @@ class _startLiveScreenPageState extends State<startLiveScreenPage> {
                   ],
                 ),
                 const SizedBox(
-                  height: 300,
+                  height: 250,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),
@@ -140,9 +140,7 @@ class _startLiveScreenPageState extends State<startLiveScreenPage> {
     XFile? file = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (file != null) {
       imagePath = file.path;
-      setState(() {
-
-      });
+      setState(() {});
     }
   }
 }

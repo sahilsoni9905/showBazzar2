@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:show_bazzar/Stream/stream_components/stream_colors.dart';
+import 'package:show_bazzar/Stream/stream_pages/podcastPage.dart';
 import 'package:show_bazzar/Stream/streammodels/podcasts.dart';
 
 class podcastItem extends StatelessWidget {
@@ -17,14 +19,25 @@ class podcastItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(12)),
       child: Column(
         children: [
-          Container(
-            width: 150,
-            height: 150,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(5),
-              child: Image.asset(
-                podcasts.imagePath,
-                fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => PodcastPage(
+                          podcast: podcasts,
+                        )),
+              );
+            },
+            child: Container(
+              width: 150,
+              height: 150,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: Image.asset(
+                  podcasts.imagePath,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),

@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:show_bazzar/Stream/stream_components/my_bottom_nav_bar.dart';
 import 'package:show_bazzar/Stream/stream_components/stream_colors.dart';
-import 'package:show_bazzar/Stream/stream_pages/reels_page.dart';
+
+import 'package:show_bazzar/Stream/stream_pages/search_page.dart';
 import 'package:show_bazzar/Stream/stream_pages/stream_profile_page.dart';
 import 'package:show_bazzar/Stream/stream_pages/stream_watch_page.dart';
 import 'package:show_bazzar/Widgets/main_drawer.dart';
-
-
 
 class StreamHomePage extends StatefulWidget {
   const StreamHomePage({super.key});
@@ -46,7 +45,6 @@ class _StreamHomePageState extends State<StreamHomePage> {
 
       // bottom Navigation bar
 
-
       // app bar
       appBar: AppBar(
         backgroundColor: StremColors.streamBackground,
@@ -79,7 +77,12 @@ class _StreamHomePageState extends State<StreamHomePage> {
               //       size: 30,
               //     )),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SearchBarPage()),
+                    );
+                  },
                   icon: const Icon(
                     Icons.search_rounded,
                     color: Colors.white,
@@ -89,7 +92,6 @@ class _StreamHomePageState extends State<StreamHomePage> {
           )
         ],
       ),
-
 
       // drawer
 
@@ -217,7 +219,6 @@ class _StreamHomePageState extends State<StreamHomePage> {
       // ),
       drawer: const HomeDrawer(),
       body: StreamWatchPage(),
-
     );
     //
   }

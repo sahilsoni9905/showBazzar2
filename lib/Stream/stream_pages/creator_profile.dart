@@ -4,6 +4,7 @@ import 'package:show_bazzar/Stream/stream_components/liveShows_tile.dart';
 import 'package:show_bazzar/Stream/stream_components/stream_colors.dart';
 import 'package:show_bazzar/Stream/streammodels/live_shows.dart';
 import 'package:show_bazzar/Stream/streammodels/profile.dart';
+import 'package:show_bazzar/Stream/streammodels/reels.dart';
 
 class creatorProfilePage extends StatefulWidget {
   Profile profile;
@@ -18,7 +19,7 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
   Color liveColor = Colors.red;
   bool isLiveSelected = true;
   //  function to select videos
-  void selectVideos() {
+  void selectReels() {
     setState(() {
       videosColor = Colors.red;
       liveColor = Colors.white;
@@ -42,14 +43,14 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
     });
   }
 
-  List<LiveShows>? getLiveShowsForProfile(String uniqueId) {
+  List<LiveShows>? getLiveShowsForProfile(int uniqueId) {
     return showsList
         .where((element) =>
             element.profile.uniqueId == uniqueId && element.isLive == true)
         .toList();
   }
 
-  List<LiveShows>? getVideosForProfile(String uniqueId) {
+  List<LiveShows>? getVideosForProfile(int uniqueId) {
     return showsList
         .where((element) =>
             element.profile.uniqueId == uniqueId && element.isLive == false)
@@ -60,7 +61,7 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
   Widget build(BuildContext context) {
     List<LiveShows>? liveShowsListForProfile =
         getLiveShowsForProfile(widget.profile.uniqueId);
-    List<LiveShows>? videosListForProfile =
+    List<LiveShows>? VideosListForProfile =
         getVideosForProfile(widget.profile.uniqueId);
 
     return Scaffold(
@@ -135,8 +136,6 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
               ),
             ),
 
-            //  live stream and videos button
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Row(
@@ -168,7 +167,7 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
                   Column(
                     children: [
                       TextButton(
-                          onPressed: selectVideos,
+                          onPressed: selectReels,
                           child: Text(
                             'Videos',
                             style: TextStyle(
@@ -192,21 +191,21 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
             Padding(padding: const EdgeInsets.all(10)),
             // shows Tiles
             SizedBox(
-              width: 350,
-              child: ListView.builder(
+                width: 380,
+                child: ListView.builder(
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.vertical,
                   itemCount: isLiveSelected
                       ? liveShowsListForProfile?.length
-                      : videosListForProfile?.length,
-                  itemBuilder: (BuildContext cotext, int index) {
+                      : VideosListForProfile?.length,
+                  itemBuilder: (BuildContext context, int index) {
                     LiveShows liveShows = isLiveSelected
                         ? liveShowsListForProfile![index]
-                        : videosListForProfile![index];
+                        : VideosListForProfile![index];
                     return liveShowsTile(liveShows: liveShows);
-                  }),
-            ),
+                  },
+                )),
+
             Padding(padding: const EdgeInsets.all(10)),
           ],
         ),
@@ -215,8 +214,127 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
   }
 }
 
+// import 'package:flutter/material.dart';
+// import 'package:show_bazzar/Stream/stream_components/stream_colors.dart';
+// import 'package:show_bazzar/Stream/stream_pages/tabs/live_videosTab.dart';
+// import 'package:show_bazzar/Stream/stream_pages/tabs/reelsTab.dart';
+// import 'package:show_bazzar/Stream/streammodels/profile.dart';
+
+// class creatorProfilePage extends StatefulWidget {
+//   Profile profile;
+//   creatorProfilePage({super.key, required this.profile});
+
+//   @override
+//   State<creatorProfilePage> createState() => _creatorProfilePageState();
+// }
+
+// class _creatorProfilePageState extends State<creatorProfilePage> {
+//   final List<Widget> tabBarViews = [
+//     LiveVideosViews(profile: profiles[0]),
+//     VideosView(
+//       profile: profiles[0],
+//     ),
+//   ];
+
+//   // function for following
+//   void toogleFollowing() {
+//     setState(() {
+//       widget.profile.following = !widget.profile.following;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return DefaultTabController(
+//       length: 2,
+//       child: Scaffold(
+//         appBar: AppBar(
+//           iconTheme: IconThemeData(color: Colors.white),
+//           backgroundColor: StremColors.streamBackground,
+//           actions: [
+//             IconButton(
+//                 onPressed: () {},
+//                 icon: Icon(
+//                   Icons.search,
+//                   color: Colors.white,
+//                 )),
+//           ],
+//         ),
+//         backgroundColor: StremColors.streamBackground,
+//         body: ListView(
+//           children: <Widget>[
+//             Padding(
+//               padding: const EdgeInsets.only(
+//                   left: 20.0, right: 5, bottom: 20, top: 20),
+//               child: Row(
+//                 children: [
+//                   Container(
+//                     width: 100,
+//                     height: 100,
+//                     child: ClipOval(
+//                       // image
+//                       child: Image.asset(
+//                         widget.profile.imagePath,
+//                         fit: BoxFit.cover,
+//                       ),
+//                     ),
+//                   ),
+//                   Padding(padding: const EdgeInsets.only(left: 20)),
+//                   Column(
+//                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: <Widget>[
+//                       // profile name , followers, follow button
+
+//                       Text(
+//                         truncatedProfileNameTitle(widget.profile.Name),
+//                         style: TextStyle(
+//                             fontSize: 30,
+//                             color: widget.profile.profleNameColor),
+//                       ),
+//                       Text(
+//                         '${widget.profile.followers.toString()}M+ Followers',
+//                         style: TextStyle(fontSize: 15, color: Colors.grey),
+//                       ),
+//                       ElevatedButton(
+//                         onPressed: toogleFollowing,
+//                         style: ElevatedButton.styleFrom(
+//                           fixedSize: Size(110, 20),
+//                           backgroundColor: widget.profile.following
+//                               ? Colors.red
+//                               : Colors.white,
+//                         ),
+//                         child: Text(
+//                           widget.profile.following ? 'Following' : 'Follow',
+//                           style: TextStyle(
+//                               color: widget.profile.following
+//                                   ? Colors.white
+//                                   : Colors.red),
+//                         ),
+//                       ),
+//                     ],
+//                   )
+//                 ],
+//               ),
+//             ),
+//             TabBar(tabs: [
+//               Tab(
+//                 icon: Icon(Icons.live_tv_outlined),
+//               ),
+//               Tab(
+//                 icon: Icon(Icons.home),
+//               )
+//             ]),
+//             SizedBox(height: 10000, child: TabBarView(children: tabBarViews))
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 String truncatedProfileNameTitle(String name) {
-  const l = 11;
+  const l = 15;
   if (name.length <= l) {
     return name;
   } else {

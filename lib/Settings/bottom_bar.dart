@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:show_bazzar/Screens/home_screen.dart';
+
 import 'package:show_bazzar/Settings/global_vaiables.dart';
 import 'package:show_bazzar/Settings/home/screens/home_screen.dart';
 import 'package:show_bazzar/Settings/my_profile/screens/my_profile_screen.dart';
 import 'package:show_bazzar/Settings/payments/screens/payment_profile.dart';
-import 'package:show_bazzar/Settings/temporary_screen/not_ready_screen.dart';
+import 'package:show_bazzar/reels/reels_page.dart';
 
 class bottomBar extends StatefulWidget {
   static const RouteName = 'Landing-screen';
@@ -21,7 +22,7 @@ class _bottomBarState extends State<bottomBar> {
 
   List<Widget> pages = [
     const HomeScreen(),
-    const notReadyScreen(),
+    const ReelsPage(),
     const myProfile(),
   ];
   void pageUpdate(int a) {

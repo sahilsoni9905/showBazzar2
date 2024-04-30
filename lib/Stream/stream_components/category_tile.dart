@@ -15,18 +15,18 @@ class categoriesTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 150,
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(15),
         color: isSelected ? onSelectedBackgroundColor : defaultBackgroundColor,
       ),
+      alignment: Alignment.center,
       child: Text(
         category.categoryName,
         style: TextStyle(
             color: isSelected ? onSelectedTextColor : defaultTextColor,
-            fontSize: 20),
+            fontSize: 15),
       ),
-      alignment: Alignment.center,
     );
   }
 }
