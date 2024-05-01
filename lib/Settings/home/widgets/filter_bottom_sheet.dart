@@ -25,8 +25,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
               'Filter',
               style: TextStyle(fontSize: 25),
@@ -50,13 +50,13 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                           shoesClicked = !shoesClicked;
                         });
                       },
-                      child: Text(
+                      child: const Text(
                         'Shoes',
                         style: TextStyle(fontSize: 20),
                       )),
                   if (shoesClicked == true)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -73,13 +73,13 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                           bagsClicked = !bagsClicked;
                         });
                       },
-                      child: Text(
+                      child: const Text(
                         'Bags',
                         style: TextStyle(fontSize: 20),
                       )),
                   if (bagsClicked == true)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -96,14 +96,14 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                         clothsClicked = !clothsClicked;
                       });
                     },
-                    child: Text(
+                    child: const Text(
                       'Clothes',
                       style: TextStyle(fontSize: 20),
                     ),
                   ),
                   if (clothsClicked == true)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -114,14 +114,14 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                         ],
                       ),
                     ),
-                  Divider(
+                  const Divider(
                     color: Colors.black,
                     thickness: 1,
                     indent: 20,
                     endIndent: 20,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
                     child: Text(
                       "Colors",
                       style: TextStyle(
@@ -141,7 +141,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                             ListTile(
                               contentPadding:
                                   const EdgeInsets.symmetric(horizontal: 10),
-                              title: Text(
+                              title: const Text(
                                 'Red ',
                                 style: TextStyle(color: Colors.red),
                               ),
@@ -159,7 +159,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                             ListTile(
                               contentPadding:
                                   const EdgeInsets.symmetric(horizontal: 10),
-                              title: Text(
+                              title: const Text(
                                 'Green ',
                                 style: TextStyle(
                                     color: Color.fromARGB(255, 5, 104, 18)),

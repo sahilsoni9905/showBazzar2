@@ -7,6 +7,9 @@ class TTopStoresSlide extends StatelessWidget {
     super.key,
   });
 
+  // final List<Widget> images;
+
+
 
   @override
   Widget build(BuildContext context) {
