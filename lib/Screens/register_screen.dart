@@ -44,7 +44,6 @@ class RegisterScreen extends StatelessWidget {
               ),
               Stack(
                 children: [
-
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.blue[900],
@@ -58,7 +57,7 @@ class RegisterScreen extends StatelessWidget {
                       ],
                     ),
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 5, vertical: 30),
+                        const EdgeInsets.symmetric(horizontal: 5, vertical: 30),
                     margin: const EdgeInsets.all(20),
                     child: Column(
                       children: [
@@ -86,8 +85,8 @@ class RegisterScreen extends StatelessWidget {
                                   ),
                                   Expanded(
                                       child: FormBox(
-                                        labelFormText: 'Last Name',
-                                      )),
+                                    labelFormText: 'Last Name',
+                                  )),
                                 ],
                               ),
                               const SizedBox(
@@ -97,8 +96,8 @@ class RegisterScreen extends StatelessWidget {
                                 children: [
                                   Expanded(
                                       child: FormBox(
-                                        labelFormText: 'Username',
-                                      )),
+                                    labelFormText: 'Username',
+                                  )),
                                   Expanded(
                                     child: DatePicker(),
                                   )
@@ -138,7 +137,8 @@ class RegisterScreen extends StatelessWidget {
                                         TextSpan(
                                           text: 'Privacy policy ',
                                           style: TextStyle(
-                                              decoration: TextDecoration.underline,
+                                              decoration:
+                                                  TextDecoration.underline,
                                               color: Colors.lightBlueAccent),
                                         ),
                                         TextSpan(
@@ -148,7 +148,8 @@ class RegisterScreen extends StatelessWidget {
                                         TextSpan(
                                           text: 'Terms of use ',
                                           style: TextStyle(
-                                              decoration: TextDecoration.underline,
+                                              decoration:
+                                                  TextDecoration.underline,
                                               color: Colors.lightBlueAccent),
                                         ),
                                       ]),
@@ -186,9 +187,9 @@ class RegisterScreen extends StatelessWidget {
                   ),
                 ],
               ),
-
-              const SizedBox(height: 16,)
-
+              const SizedBox(
+                height: 16,
+              )
             ],
           ),
         ),
