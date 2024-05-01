@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:show_bazzar/Settings/company_details/screens/company_details_screen.dart';
+import 'package:show_bazzar/Settings/company_details/widgets/shoes_image_builder.dart';
+import 'package:show_bazzar/Settings/global_vaiables.dart';
 import 'package:show_bazzar/Settings/payments/screens/my_cards_screen.dart';
 import 'package:show_bazzar/Stream/stream_components/my_bottom_nav_bar.dart';
 import 'package:show_bazzar/Stream/stream_pages/stream_home_page.dart';
@@ -195,7 +197,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24),
                 child: TPromoSlider(
                   width: 380,
@@ -206,28 +208,47 @@ class HomeScreen extends StatelessWidget {
                     'images/shoes/shoe3.png',
                     'images/shoes/shoe4.png'
                   ],
-                  liveText: 'Nike India is live',
+                  liveText: 'Nike India is Live',
                   viewText: '300k+ Views',
                   logoImage: 'images/nike.jpg',
+                  list: gridShoesImageUrls,
                 ),
               ),
               // const SizedBox(
               //   height: TSizes.spaceBtwItems / 16,
               // ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.all(24),
                 child: TPromoSlider(
                   width: 380,
                   height: 240,
                   banners: [
-                    'images/shoes/shoe4.png',
-                    'images/shoes/shoe1.png',
-                    'images/shoes/shoe2.png',
-                    'images/shoes/shoe3.png',
+                    'assets/images/banners/iphone.jpeg',
+                    'assets/images/banners/iphone.jpeg',
+                    'assets/images/banners/iphone.jpeg',
+                    'assets/images/banners/iphone.jpeg',
                   ],
-                  liveText: 'Nike India is live',
+                  liveText: 'Apple India is Live',
                   viewText: '300k+ Views',
-                  logoImage: 'images/nike.jpg',
+                  logoImage: 'images/appleLogo.jpg',
+                  list: gridAppleImageUrls,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(16),
+                child: TPromoSlider(
+                  width: 380,
+                  height: 240,
+                  banners: [
+                    'images/hp.webp',
+                    'images/hp.webp',
+                    'images/hp.webp',
+                    'images/hp.webp',
+                  ],
+                  liveText: 'HP India is live',
+                  viewText: '300k+ Views',
+                  logoImage: 'images/hpLogo.png',
+                  list: gridHpImageUrls,
                 ),
               ),
               const Padding(
@@ -236,14 +257,14 @@ class HomeScreen extends StatelessWidget {
                   width: 380,
                   height: 240,
                   banners: [
-                    'images/shoes/shoe1.png',
-                    'images/shoes/shoe2.png',
-                    'images/shoes/shoe3.png',
-                    'images/shoes/shoe4.png'
+                    'images/levis.jpeg',
+                    'images/levis.jpeg',
+                    'images/levis.jpeg',
+                    'images/levis.jpeg',
                   ],
-                  liveText: 'Nike India is live',
+                  liveText: 'Levis India is live',
                   viewText: '300k+ Views',
-                  logoImage: 'images/nike.jpg',
+                  logoImage: 'images/Levis-Logo.png',
                 ),
               ),
               const Padding(

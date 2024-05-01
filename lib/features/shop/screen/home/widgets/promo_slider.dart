@@ -12,7 +12,11 @@ class TPromoSlider extends StatelessWidget {
     super.key,
     required this.banners,
     required this.width,
-    required this.height, required this.liveText, required this.viewText, required this.logoImage,
+    required this.height,
+    required this.liveText,
+    required this.viewText,
+    required this.logoImage,
+    this.list,
   });
 
   final List<String> banners;
@@ -20,6 +24,7 @@ class TPromoSlider extends StatelessWidget {
   final String liveText;
   final String viewText;
   final String logoImage;
+  final List<String>? list;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +40,9 @@ class TPromoSlider extends StatelessWidget {
             .map((url) => TRoundedImage(
                   imageUrl: url,
                   width: width,
-                  height: height, borderRadius: 24,
+                  height: height,
+                  borderRadius: 24,
+                  list: list,
                 ))
             .toList(),
       ),
@@ -60,24 +67,37 @@ class TPromoSlider extends StatelessWidget {
       Container(
         width: 380,
         height: 70,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.black.withOpacity(0.5)),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.black.withOpacity(0.5)),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Row(
+            Row(
               children: [
                 ClipRRect(
-                  child: TRoundedImage(width: 50, imageUrl: 'images/nike.jpg', borderRadius: 18,)
-                ),
+                    child: TRoundedImage(
+                  width: 50,
+                  imageUrl: logoImage,
+                  borderRadius: 18,
+                )),
               ],
             ),
-             const SizedBox(width: TSizes.spaceBtwItems/2,),
-             Column(
+            const SizedBox(
+              width: TSizes.spaceBtwItems / 2,
+            ),
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(liveText, style: const TextStyle(color: Colors.white),),
-                Text(viewText, style: const TextStyle(color: Colors.white),),
+                Text(
+                  liveText,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                Text(
+                  viewText,
+                  style: const TextStyle(color: Colors.white),
+                ),
               ],
             )
           ],

@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:show_bazzar/Settings/classes/categories_structure.dart';
+import 'package:show_bazzar/Settings/classes/top_stores_structure.dart';
+import 'package:show_bazzar/Settings/global_vaiables.dart';
 
 import '../vertical_image_text.dart';
 
 class TCategoriesSlide extends StatelessWidget {
   const TCategoriesSlide({
-    super.key, required this.radius, required this.height, required this.width, required this.heighttext, required this.title,
+    super.key,
+    required this.radius,
+    required this.height,
+    required this.width,
+    required this.heighttext,
+    required this.title,
   });
   final double radius;
   final double height, width, heighttext;
@@ -15,7 +23,7 @@ class TCategoriesSlide extends StatelessWidget {
     return SizedBox(
       height: heighttext,
       child: ListView.builder(
-          itemCount: 6,
+          itemCount: topCategoriesList.length,
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemBuilder: (_, index) {
@@ -23,9 +31,10 @@ class TCategoriesSlide extends StatelessWidget {
               height: height,
               width: width,
               radius: radius,
-              image: 'images/shoes.png',
+              image: listTopCategories[index],
               title: title,
               onTap: () {},
+              topCategories: topCategoriesList[index],
             );
           }),
     );
