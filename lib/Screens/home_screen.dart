@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:show_bazzar/Settings/company_details/screens/company_details_screen.dart';
+import 'package:show_bazzar/Settings/company_details/widgets/shoes_image_builder.dart';
+import 'package:show_bazzar/Settings/global_vaiables.dart';
 import 'package:show_bazzar/Settings/payments/screens/my_cards_screen.dart';
 import 'package:show_bazzar/Stream/stream_pages/stream_home_page.dart';
 import 'package:show_bazzar/Widgets/Home%20Page/categories_slider.dart';
@@ -194,7 +196,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24),
                 child: TPromoSlider(
                   width: 380,
@@ -208,12 +210,13 @@ class HomeScreen extends StatelessWidget {
                   liveText: 'Nike India is Live',
                   viewText: '300k+ Views',
                   logoImage: 'images/nike.jpg',
+                  list: gridShoesImageUrls,
                 ),
               ),
               // const SizedBox(
               //   height: TSizes.spaceBtwItems / 16,
               // ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.all(24),
                 child: TPromoSlider(
                   width: 380,
@@ -227,9 +230,10 @@ class HomeScreen extends StatelessWidget {
                   liveText: 'Apple India is Live',
                   viewText: '300k+ Views',
                   logoImage: 'images/appleLogo.jpg',
+                  list: gridAppleImageUrls,
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.all(16),
                 child: TPromoSlider(
                   width: 380,
@@ -243,6 +247,7 @@ class HomeScreen extends StatelessWidget {
                   liveText: 'HP India is live',
                   viewText: '300k+ Views',
                   logoImage: 'images/hpLogo.png',
+                  list: gridHpImageUrls,
                 ),
               ),
               const Padding(

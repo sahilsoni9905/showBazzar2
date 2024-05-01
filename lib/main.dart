@@ -32,8 +32,6 @@ void main() {
         // initialBinding: GeneralBindings(),
        // onGenerateRoute: (settings) => genrateRoute(settings),
         home: const ShowBazzar(),
-
-
       //     home: const bottomBar()
        )
   );

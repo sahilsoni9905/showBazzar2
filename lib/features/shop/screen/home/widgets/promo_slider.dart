@@ -16,6 +16,7 @@ class TPromoSlider extends StatelessWidget {
     required this.liveText,
     required this.viewText,
     required this.logoImage,
+    this.list,
   });
 
   final List<String> banners;
@@ -23,6 +24,7 @@ class TPromoSlider extends StatelessWidget {
   final String liveText;
   final String viewText;
   final String logoImage;
+  final List<String>? list;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +42,7 @@ class TPromoSlider extends StatelessWidget {
                   width: width,
                   height: height,
                   borderRadius: 24,
+                  list: list,
                 ))
             .toList(),
       ),

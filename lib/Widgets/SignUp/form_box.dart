@@ -17,7 +17,7 @@ class FormBox extends StatelessWidget {
           color: Colors.white, borderRadius: BorderRadius.circular(80)),
       child: TextFormField(
         decoration:  InputDecoration(
-          labelText: labelFormText, labelStyle: TextStyle(color: Colors.grey, fontSize: TSizes.fontSizeSm)
+          labelText: labelFormText, labelStyle: TextStyle(color: Colors.grey, fontSize: TSizes.fontSizeSm) , 
         ),
         expands: false,
       ),

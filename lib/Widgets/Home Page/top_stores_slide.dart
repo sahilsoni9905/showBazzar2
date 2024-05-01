@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:show_bazzar/Settings/global_vaiables.dart';
+import 'package:show_bazzar/Settings/classes/top_stores_structure.dart';
 
 import '../vertical_image_text.dart';
 
@@ -15,7 +16,7 @@ class TTopStoresSlide extends StatelessWidget {
     return SizedBox(
       height: 100,
       child: ListView.builder(
-        itemCount: 6,
+        itemCount: topStoresList.length,
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) {
@@ -26,6 +27,7 @@ class TTopStoresSlide extends StatelessWidget {
             title: 'Shoes',
             onTap: () {},
             radius: 100,
+            topStores: topStoresList[index],
           );
         },
       ),

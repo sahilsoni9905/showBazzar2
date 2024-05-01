@@ -2,6 +2,11 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:show_bazzar/Screens/product_detail_screen.dart';
+import 'package:show_bazzar/Settings/classes/categories_structure.dart';
+import 'package:show_bazzar/Settings/classes/top_stores_structure.dart';
+import 'package:show_bazzar/Settings/company_details/widgets/image_container.dart';
+import 'package:show_bazzar/Settings/global_vaiables.dart';
+import 'package:show_bazzar/Settings/home/widgets/filter_bottom_sheet.dart';
 import 'package:show_bazzar/Widgets/Common%20Widgets/trounded_container.dart';
 import 'package:show_bazzar/Widgets/Common%20Widgets/trounded_image.dart';
 import 'package:show_bazzar/Widgets/Home%20Page/categories_slider.dart';
@@ -9,18 +14,15 @@ import 'package:show_bazzar/Widgets/Product/product_card_horizontal.dart';
 import 'package:show_bazzar/Widgets/main_drawer.dart';
 import 'package:show_bazzar/features/shop/screen/home/widgets/promo_slider.dart';
 
-import '../Settings/company_details/widgets/image_container.dart';
-import '../Settings/company_details/widgets/shoes_image_builder.dart';
-import '../Settings/global_vaiables.dart';
-import '../Settings/home/widgets/filter_bottom_sheet.dart';
-
-class BrandScreen extends StatelessWidget {
+class BrandScreen2 extends StatelessWidget {
   static const routeName = '/company-detail-screen';
-  const BrandScreen({
-    required this.list,
+  const BrandScreen2({
+    this.topCategories,
+    this.topStores,
     Key? key,
   }) : super(key: key);
-  final List<String> list;
+  final TopStores? topStores;
+  final TopCategories? topCategories;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +31,12 @@ class BrandScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: backGroundColor,
-        title: const Text(
-          'Nike India',
+        title: Text(
+          topCategories == null
+              ? topStores == null
+                  ? 'Temp'
+                  : topStores!.storeName
+              : topCategories!.categoryName,
           style: TextStyle(color: Colors.white),
         ),
         iconTheme: const IconThemeData(color: Colors.black),
@@ -105,13 +111,6 @@ class BrandScreen extends StatelessWidget {
                             fontSize: 20,
                             fontWeight: FontWeight.w500),
                       ),
-                      // Text(
-                      //   'See All',
-                      //   style: TextStyle(
-                      //       color: Colors.grey,
-                      //       fontSize: 20,
-                      //       fontWeight: FontWeight.w300),
-                      // ),
                     ],
                   ),
                   const SizedBox(
@@ -125,14 +124,6 @@ class BrandScreen extends StatelessWidget {
                         ),
                       );
                     },
-                    child: CarouselSlider.builder(
-                      itemCount: 4, // Change this to your desired count
-                      options: CarouselOptions(height: 180),
-                      itemBuilder: (context, index, realIndex) {
-                        // You can replace this with your actual item builder
-                        return ShoesImageBuilder(image: list[index]);
-                      },
-                    ),
                   ),
                   const SizedBox(
                     height: 20,
@@ -148,13 +139,21 @@ class BrandScreen extends StatelessWidget {
                               crossAxisSpacing: 10,
                               mainAxisSpacing: 30,
                               childAspectRatio: 0.6),
-                      itemCount: list.length,
+                      itemCount: topCategories == null
+                          ? topStores == null
+                              ? 5
+                              : topStores!.storeImages.length
+                          : topCategories!.categoryImages.length,
                       itemBuilder: (context, index) {
                         return LayoutBuilder(
                           builder: (BuildContext context,
                               BoxConstraints constraints) {
                             return GridImageEditer(
-                              imageAddress: list[index],
+                              imageAddress: topCategories == null
+                                  ? topStores == null
+                                      ? 'https://th.bing.com/th/id/OIP.2kuONkNHcwQ2y7DTyoiX8AHaHa?rs=1&pid=ImgDetMain'
+                                      : topStores!.storeImages[index]
+                                  : topCategories!.categoryImages[index],
                               size: constraints,
                             );
                           },
