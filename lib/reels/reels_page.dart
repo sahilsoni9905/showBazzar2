@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:show_bazzar/Stream/streammodels/reels.dart';
 
 import 'package:show_bazzar/reels/reel_side_actionBar.dart';
@@ -23,7 +21,7 @@ class _ReelsPageState extends State<ReelsPage> {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         centerTitle: false,
-        title: Text(
+        title: const Text(
           'Reels',
           style: TextStyle(
               color: Colors.white, fontSize: 26, fontWeight: FontWeight.bold),
@@ -31,7 +29,7 @@ class _ReelsPageState extends State<ReelsPage> {
         actions: [
           IconButton(
               onPressed: () => {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.photo_camera_back_outlined,
                 color: Colors.white,
               ))
@@ -52,17 +50,23 @@ class _ReelsPageState extends State<ReelsPage> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [
-                      Colors.black.withOpacity(0.2),
-                      Colors.transparent
-                    ], begin: Alignment(0, -0.75), end: Alignment(0, 0.1))),
+                        gradient: LinearGradient(
+                            colors: [
+                          Colors.black.withOpacity(0.2),
+                          Colors.transparent
+                        ],
+                            begin: const Alignment(0, -0.75),
+                            end: const Alignment(0, 0.1))),
                   ),
                   Container(
                     decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [
-                      Colors.black.withOpacity(0.2),
-                      Colors.transparent
-                    ], end: Alignment(0, -0.75), begin: Alignment(0, 0.1))),
+                        gradient: LinearGradient(
+                            colors: [
+                          Colors.black.withOpacity(0.2),
+                          Colors.transparent
+                        ],
+                            end: const Alignment(0, -0.75),
+                            begin: const Alignment(0, 0.1))),
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.end,

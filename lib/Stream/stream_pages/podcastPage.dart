@@ -1,7 +1,7 @@
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:just_audio/just_audio.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:show_bazzar/Stream/stream_components/neuBox.dart';
@@ -58,12 +58,12 @@ class _PodcastPageState extends State<PodcastPage> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
                 color: Colors.white,
               )),
           titleSpacing: 80,
-          title: Text(
+          title: const Text(
             'NOW  PLAYING',
             style: TextStyle(
                 color: Colors.white, fontSize: 22, fontWeight: FontWeight.w200),
@@ -76,29 +76,29 @@ class _PodcastPageState extends State<PodcastPage> {
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
               child: NeuBox(
-                  child: Container(
+                  child: SizedBox(
                       height: 300,
                       width: 300,
                       child: Image.asset(widget.podcast.imagePath))),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Text(
               widget.podcast.title,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,
                   fontWeight: FontWeight.bold),
             ),
             Text(
               widget.podcast.uploaderName,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.grey,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StreamBuilder<PositionData>(

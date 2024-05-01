@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:show_bazzar/Stream/stream_components/liveShows_tile.dart';
 import 'package:show_bazzar/Stream/stream_components/stream_colors.dart';
@@ -5,6 +7,8 @@ import 'package:show_bazzar/Stream/streammodels/live_shows.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class SearchBarPage extends StatefulWidget {
+  const SearchBarPage({super.key});
+
   @override
   _SearchBarPageState createState() => _SearchBarPageState();
 }
@@ -142,10 +146,10 @@ class _SearchBarPageState extends State<SearchBarPage> {
                           },
                         ),
                       )
-                    : Center(
+                    : const Center(
                         child: Text(
                           'No results found',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 24,
                             color: Colors.white,
                           ),

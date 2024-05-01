@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:show_bazzar/Stream/stream_components/my_bottom_nav_bar.dart';
+
 import 'package:show_bazzar/Stream/stream_components/stream_colors.dart';
 
 import 'package:show_bazzar/Stream/stream_pages/search_page.dart';
-import 'package:show_bazzar/Stream/stream_pages/stream_profile_page.dart';
+
 import 'package:show_bazzar/Stream/stream_pages/stream_watch_page.dart';
 import 'package:show_bazzar/Widgets/main_drawer.dart';
 
@@ -218,7 +216,7 @@ class _StreamHomePageState extends State<StreamHomePage> {
       //   ),
       // ),
       drawer: const HomeDrawer(),
-      body: StreamWatchPage(),
+      body: const StreamWatchPage(),
     );
     //
   }

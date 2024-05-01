@@ -4,7 +4,6 @@ import 'package:show_bazzar/Stream/stream_components/liveShows_tile.dart';
 import 'package:show_bazzar/Stream/stream_components/stream_colors.dart';
 import 'package:show_bazzar/Stream/streammodels/live_shows.dart';
 import 'package:show_bazzar/Stream/streammodels/profile.dart';
-import 'package:show_bazzar/Stream/streammodels/reels.dart';
 
 class creatorProfilePage extends StatefulWidget {
   Profile profile;
@@ -66,18 +65,18 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
 
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: StremColors.streamBackground,
         actions: [
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.search,
                 color: Colors.white,
               )),
         ],
       ),
-      backgroundColor: Color(0xFF070F2B),
+      backgroundColor: const Color(0xFF070F2B),
       // top Container containing profile name, photo, followers, follow button
       body: SingleChildScrollView(
         child: Column(
@@ -86,7 +85,7 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: Row(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 100,
                     height: 100,
                     child: ClipOval(
@@ -97,7 +96,7 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
                       ),
                     ),
                   ),
-                  Padding(padding: const EdgeInsets.only(left: 20)),
+                  const Padding(padding: EdgeInsets.only(left: 20)),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,12 +111,13 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
                       ),
                       Text(
                         '${widget.profile.followers.toString()}M+ Followers',
-                        style: TextStyle(fontSize: 15, color: Colors.grey),
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.grey),
                       ),
                       ElevatedButton(
                         onPressed: toogleFollowing,
                         style: ElevatedButton.styleFrom(
-                          fixedSize: Size(110, 20),
+                          fixedSize: const Size(110, 20),
                           backgroundColor: widget.profile.following
                               ? Colors.red
                               : Colors.white,
@@ -161,7 +161,7 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
                           )
                         : Container(),
                   ]),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Column(
@@ -188,7 +188,7 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
                 ],
               ),
             ),
-            Padding(padding: const EdgeInsets.all(10)),
+            const Padding(padding: EdgeInsets.all(10)),
             // shows Tiles
             SizedBox(
                 width: 380,
@@ -206,7 +206,7 @@ class _creatorProfilePageState extends State<creatorProfilePage> {
                   },
                 )),
 
-            Padding(padding: const EdgeInsets.all(10)),
+            const Padding(padding: EdgeInsets.all(10)),
           ],
         ),
       ),

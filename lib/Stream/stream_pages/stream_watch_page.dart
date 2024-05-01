@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:show_bazzar/Screens/home_screen.dart';
 import 'package:show_bazzar/Settings/bottom_bar.dart';
 import 'package:show_bazzar/Stream/stream_components/category_tile.dart';
 import 'package:show_bazzar/Stream/stream_components/liveShows_tile.dart';
 import 'package:show_bazzar/Stream/stream_components/podcast_item.dart';
 import 'package:show_bazzar/Stream/stream_components/profile_tile.dart';
 import 'package:show_bazzar/Stream/stream_components/stream_colors.dart';
-import 'package:show_bazzar/Stream/stream_pages/refer_and_earn.dart';
+
 import 'package:show_bazzar/Stream/stream_pages/start_live_streamPage.dart';
 import 'package:show_bazzar/Stream/streammodels/live_shows.dart';
 import 'package:show_bazzar/Stream/streammodels/podcasts.dart';
@@ -314,9 +313,9 @@ class _StreamWatchPageState extends State<StreamWatchPage> {
           //   SnackBar(content: Text('Floating Action Button Pressed')),
           // );
         },
-        child: const Icon(Icons.add),
         backgroundColor: const Color(0xFF6552FE),
         hoverElevation: 100,
+        child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );

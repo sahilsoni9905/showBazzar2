@@ -11,11 +11,11 @@ class NeuBox extends StatelessWidget {
       decoration: BoxDecoration(
           color: StremColors.streamBackground,
           borderRadius: BorderRadius.circular(12),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.black,
               blurRadius: 15,
-              offset: const Offset(4, 4),
+              offset: Offset(4, 4),
             ),
             // BoxShadow(
             //     color: Colors.white,

@@ -89,7 +89,7 @@ List<LiveShows>? fetchLiveShowList() {
   List<LiveShows>? liveShowsList = [];
   for (int i = 0; i < showsList.length; i++) {
     if (showsList[i].isLive == true) {
-      liveShowsList?.add(showsList[i]);
+      liveShowsList.add(showsList[i]);
     }
   }
   return liveShowsList;
@@ -99,30 +99,30 @@ List<LiveShows>? fetchVideosList() {
   List<LiveShows>? videosList = [];
   for (int i = 0; i < showsList.length; i++) {
     if (showsList[i].isLive == false) {
-      videosList?.add(showsList[i]);
+      videosList.add(showsList[i]);
     }
   }
   return videosList;
 }
 
-List<LiveShows>? fetchLiveShowsListForProfile(String uniqueId) {
-  List<LiveShows>? liveShowsList = [];
-  for (int i = 0; i < showsList.length; i++) {
-    if (showsList[i].isLive == true &&
-        showsList[i].profile.uniqueId == uniqueId) {
-      liveShowsList?.add(showsList[i]);
-    }
-  }
-  return liveShowsList;
-}
+// List<LiveShows>? fetchLiveShowsListForProfile(int uniqueId) {
+//   List<LiveShows>? liveShowsList = [];
+//   for (int i = 0; i < showsList.length; i++) {
+//     if (showsList[i].isLive == true &&
+//         showsList[i].profile.uniqueId == uniqueId) {
+//       liveShowsList.add(showsList[i]);
+//     }
+//   }
+//   return liveShowsList;
+// }
 
-List<LiveShows>? fetchVideosListForProfile(Profile uniqueId) {
-  List<LiveShows>? videosList = [];
-  for (int i = 0; i < showsList.length; i++) {
-    if (showsList[i].isLive == true &&
-        showsList[i].profile.uniqueId == uniqueId) {
-      videosList?.add(showsList[i]);
-    }
-  }
-  return videosList;
-}
+// List<LiveShows>? fetchVideosListForProfile(Profile uniqueId) {
+//   List<LiveShows>? videosList = [];
+//   for (int i = 0; i < showsList.length; i++) {
+//     if (showsList[i].isLive == true &&
+//         showsList[i].profile.uniqueId == uniqueId) {
+//       videosList.add(showsList[i]);
+//     }
+//   }
+//   return videosList;
+// }

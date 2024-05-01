@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:show_bazzar/Stream/streammodels/stream_category.dart';
 
@@ -6,7 +5,7 @@ class categoriesTile extends StatelessWidget {
   streamCategory category;
   final bool isSelected;
   categoriesTile({super.key, required this.category, required this.isSelected});
-  Color defaultBackgroundColor = Color(0x28FFFFFF);
+  Color defaultBackgroundColor = const Color(0x28FFFFFF);
   Color defaultTextColor = Colors.white;
   Color onSelectedBackgroundColor = Colors.white;
   Color onSelectedTextColor = Colors.red;

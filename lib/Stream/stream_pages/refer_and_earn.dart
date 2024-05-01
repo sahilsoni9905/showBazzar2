@@ -4,6 +4,8 @@ import 'package:show_bazzar/Stream/stream_components/neuBox.dart';
 import 'package:show_bazzar/Stream/stream_components/stream_colors.dart';
 
 class ReferAndEarnPage extends StatelessWidget {
+  const ReferAndEarnPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,21 +17,21 @@ class ReferAndEarnPage extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
               color: Colors.white,
             )),
-        title: Text(
+        title: const Text(
           'Refer & Earn',
           style: TextStyle(color: Colors.white),
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Text(
               'Invite your friends and earn rewards!',
               style: GoogleFonts.poppins(
@@ -37,7 +39,7 @@ class ReferAndEarnPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Text(
               'Share your unique referral link and get rewarded when your friends sign up.',
               style: GoogleFonts.poppins(fontSize: 16.0, color: Colors.white),
@@ -50,30 +52,30 @@ class ReferAndEarnPage extends StatelessWidget {
             TextField(
               decoration: InputDecoration(
                 hintText: 'BDK703JDBSLKKJDJ',
-                hintStyle: TextStyle(
+                hintStyle: const TextStyle(
                   color: Colors.white,
                 ),
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.copy),
+                  icon: const Icon(Icons.copy),
                   onPressed: () {
                     // Copy the referral link to the clipboard
                   },
                 ),
               ),
             ),
-            SizedBox(height: 25.0),
+            const SizedBox(height: 25.0),
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF6552FE),
+                  backgroundColor: const Color(0xFF6552FE),
                   minimumSize: const Size(double.infinity, 40)),
-              child: Text(
+              child: const Text(
                 'Share Referral Link',
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            SizedBox(height: 32.0),
+            const SizedBox(height: 32.0),
             Text(
               'Rewards Earned',
               style: GoogleFonts.poppins(
@@ -81,11 +83,11 @@ class ReferAndEarnPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Card(
               color: Colors.black,
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

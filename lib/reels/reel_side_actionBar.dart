@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:show_bazzar/Settings/my_profile/screens/my_profile_screen.dart';
 import 'package:show_bazzar/Stream/streammodels/reels.dart';
 
@@ -37,42 +37,42 @@ class _ReelSideActionBarState extends State<ReelSideActionBar> {
         ),
         Text(
           widget.reel.totlaLikes,
-          style: TextStyle(
+          style: const TextStyle(
               fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.chat_bubble_outline),
+          icon: const Icon(Icons.chat_bubble_outline),
           iconSize: _iconSize,
           color: Colors.white,
         ),
         Text(widget.reel.totalComments,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 10,
                 fontWeight: FontWeight.bold,
                 color: Colors.white)),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.send_outlined),
+          icon: const Icon(Icons.send_outlined),
           iconSize: _iconSize,
           color: Colors.white,
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.more_horiz),
+          icon: const Icon(Icons.more_horiz),
           iconSize: _iconSize,
           color: Colors.white,
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         GestureDetector(
@@ -89,7 +89,7 @@ class _ReelSideActionBarState extends State<ReelSideActionBar> {
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(color: Colors.white, width: 2),
-                image: DecorationImage(
+                image: const DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage('lib/Stream/images/Profile/1.png'))),
           ),
