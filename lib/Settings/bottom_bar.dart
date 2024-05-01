@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:show_bazzar/Screens/home_screen.dart';
-
-import 'package:show_bazzar/Settings/global_vaiables.dart';
-import 'package:show_bazzar/Settings/home/screens/home_screen.dart';
 import 'package:show_bazzar/Settings/my_profile/screens/my_profile_screen.dart';
-import 'package:show_bazzar/Settings/payments/screens/payment_profile.dart';
 import 'package:show_bazzar/reels/reels_page.dart';
 
 class bottomBar extends StatefulWidget {
@@ -37,7 +33,7 @@ class _bottomBarState extends State<bottomBar> {
       body: pages[_page],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _page,
-        selectedItemColor: Color.fromARGB(255, 182, 87, 237),
+        selectedItemColor: const Color(0xFF6552FE),
         unselectedItemColor: Colors.white,
         backgroundColor: Colors.black,
         iconSize: 28,

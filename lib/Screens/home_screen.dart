@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:show_bazzar/Settings/company_details/screens/company_details_screen.dart';
 import 'package:show_bazzar/Settings/payments/screens/my_cards_screen.dart';
+import 'package:show_bazzar/Stream/stream_components/my_bottom_nav_bar.dart';
 import 'package:show_bazzar/Stream/stream_pages/stream_home_page.dart';
 import 'package:show_bazzar/Widgets/Home%20Page/categories_slider.dart';
 import 'package:show_bazzar/Widgets/Home%20Page/top_stores_slide.dart';
@@ -136,7 +137,7 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (ctx) => const StreamHomePage(),
+                          builder: (ctx) => const myBottomNavBar(),
                         ),
                       );
                     },
@@ -261,11 +262,9 @@ class HomeScreen extends StatelessWidget {
                   logoImage: 'images/nike.jpg',
                 ),
               ),
-
             ],
           ),
         ),
-
       ),
     );
   }

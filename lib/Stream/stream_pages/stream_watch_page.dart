@@ -195,7 +195,7 @@ class _StreamWatchPageState extends State<StreamWatchPage> {
               child: ListView.builder(
                   itemCount: podcastsList.length,
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (BuildContextcontext, int index) {
+                  itemBuilder: (BuildContext context, int index) {
                     // create podcast item
                     Podcasts podcasts = podcastsList[index];
                     return podcastItem(podcasts: podcasts);
