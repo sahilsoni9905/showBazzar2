@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../../Screens/product_detail_screen.dart';
 
-class GridImageEditer extends StatelessWidget {
+class GridImageEditer extends StatefulWidget {
   const GridImageEditer(
       {Key? key, required this.imageAddress, required this.size})
       : super(key: key);
@@ -12,15 +12,23 @@ class GridImageEditer extends StatelessWidget {
   final BoxConstraints size;
 
   @override
+  State<GridImageEditer> createState() => _GridImageEditerState();
+}
+
+class _GridImageEditerState extends State<GridImageEditer> {
+  Color col = const Color.fromARGB(255, 172, 171, 171);
+  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         GestureDetector(
-          onTap: (){Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (ctx) =>  const ProductDetailScreen(),
-            ),
-          );},
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (ctx) => const ProductDetailScreen(),
+              ),
+            );
+          },
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(color: Colors.white),
@@ -31,8 +39,8 @@ class GridImageEditer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.network(
-                  imageAddress,
-                  height: size.maxHeight * 0.8,
+                  widget.imageAddress,
+                  height: widget.size.maxHeight * 0.8,
                   width: double.infinity,
                   fit: BoxFit.cover,
                   // Adjust width as needed
@@ -60,10 +68,16 @@ class GridImageEditer extends StatelessWidget {
                 color: Colors.white, borderRadius: BorderRadius.circular(50)),
 
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                if (col == Color.fromARGB(255, 172, 171, 171)) {
+                  col = Colors.red;
+                } else
+                  col = Color.fromARGB(255, 172, 171, 171);
+                setState(() {});
+              },
               icon: Icon(
                 Icons.favorite,
-                color: Colors.red,
+                color: col,
               ),
             ), // Change the icon as needed
             // Change the color as needed
