@@ -68,7 +68,7 @@ class ProductDetailScreen extends StatelessWidget {
                         color: Colors.black, fontWeight: FontWeight.bold),
                   ),
 
-                  ///Price
+                  ///Pricee
                   const Row(
                     children: [
                       // Text('Rs. 750', style:  Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),),
