@@ -1,13 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:show_bazzar/Screens/home_screen.dart';
+
 import 'package:show_bazzar/Settings/bottom_bar.dart';
 import 'package:show_bazzar/Stream/stream_components/category_tile.dart';
 import 'package:show_bazzar/Stream/stream_components/liveShows_tile.dart';
 import 'package:show_bazzar/Stream/stream_components/podcast_item.dart';
 import 'package:show_bazzar/Stream/stream_components/profile_tile.dart';
 import 'package:show_bazzar/Stream/stream_components/stream_colors.dart';
+
 import 'package:show_bazzar/Stream/stream_pages/start_live_streamPage.dart';
 import 'package:show_bazzar/Stream/streammodels/live_shows.dart';
 import 'package:show_bazzar/Stream/streammodels/podcasts.dart';
@@ -76,7 +75,7 @@ class _StreamWatchPageState extends State<StreamWatchPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -142,7 +141,10 @@ class _StreamWatchPageState extends State<StreamWatchPage> {
                   children: [
                     Text(
                       'Top Channels',
-                      style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                     // Text(
                     //   'See all',
@@ -174,7 +176,10 @@ class _StreamWatchPageState extends State<StreamWatchPage> {
                   children: [
                     Text(
                       'Podcasts',
-                      style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                     // Text(
                     //   'See all',
@@ -190,7 +195,7 @@ class _StreamWatchPageState extends State<StreamWatchPage> {
               child: ListView.builder(
                   itemCount: podcastsList.length,
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (BuildContextcontext, int index) {
+                  itemBuilder: (BuildContext context, int index) {
                     // create podcast item
                     Podcasts podcasts = podcastsList[index];
                     return podcastItem(podcasts: podcasts);
@@ -206,7 +211,10 @@ class _StreamWatchPageState extends State<StreamWatchPage> {
                   children: [
                     Text(
                       'Categories',
-                      style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                     // Text(
                     //   'See all',
@@ -256,7 +264,10 @@ class _StreamWatchPageState extends State<StreamWatchPage> {
                   children: [
                     Text(
                       'Live Now',
-                      style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                     // Text(
                     //   'See all',
@@ -265,20 +276,23 @@ class _StreamWatchPageState extends State<StreamWatchPage> {
                   ]),
             ),
 
-            SizedBox(
-              width: 350,
-              child: ListView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: toShowList?.length,
-                scrollDirection: Axis.vertical,
-                itemBuilder: (BuildContext context, int index) {
-                  // create liveshow item
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: SizedBox(
+                width: 380,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: toShowList?.length,
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (BuildContext context, int index) {
+                    // create liveshow item
 
-                  LiveShows liveShows = toShowList![index];
+                    LiveShows liveShows = toShowList![index];
 
-                  return liveShowsTile(liveShows: liveShows);
-                },
+                    return liveShowsTile(liveShows: liveShows);
+                  },
+                ),
               ),
             ),
             const Padding(padding: EdgeInsets.all(30))
@@ -294,13 +308,14 @@ class _StreamWatchPageState extends State<StreamWatchPage> {
               builder: (ctx) => const startLiveScreenPage(),
             ),
           );
+
           // ScaffoldMessenger.of(context).showSnackBar(
           //   SnackBar(content: Text('Floating Action Button Pressed')),
           // );
         },
-        child: const Icon(Icons.add),
         backgroundColor: const Color(0xFF6552FE),
         hoverElevation: 100,
+        child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );

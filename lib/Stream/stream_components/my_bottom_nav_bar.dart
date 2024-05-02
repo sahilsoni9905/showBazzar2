@@ -1,47 +1,73 @@
-// import 'package:flutter/material.dart';
-// import 'package:google_nav_bar/google_nav_bar.dart';
-//
-// class myBottomNavBar extends StatelessWidget {
-//   void Function(int)? onTabChange;
-//   myBottomNavBar({super.key, required this.onTabChange});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       height: 80,
-//       color: Colors.black,
-//       // padding: EdgeInsets.symmetric(horizontal: 6),
-//       child: GNav(
-//         color: Colors.black,
-//         activeColor: Colors.red,
-//         // tabActiveBorder: Border.all(color: Colors.grey),
-//         tabBackgroundColor: Color.fromARGB(255, 23, 26, 27),
-//         mainAxisAlignment: MainAxisAlignment.spaceAround,
-//         onTabChange: (value) => onTabChange!(value),
-//         tabs: [
-//           GButton(
-//             icon: Icons.home_outlined,
-//             iconColor: Colors.white,
-//             iconSize: 30,
-//             // text: 'Home',
-//             // textColor: Colors.white,
-//           ),
-//           GButton(
-//             icon: Icons.play_circle_outlined,
-//             iconColor: Colors.white,
-//             iconSize: 30,
-//             // text: 'Reels',
-//             // textColor: Colors.white,
-//           ),
-//           GButton(
-//             icon: Icons.person_2_outlined,
-//             iconColor: Colors.white,
-//             iconSize: 30,
-//             // text: 'Profile',
-//             // textColor: Colors.white,
-//           )
-//         ],
-//       ),
-//     );
-//   }
-// }
+import 'package:flutter/material.dart';
+
+import 'package:show_bazzar/Settings/my_profile/screens/my_profile_screen.dart';
+import 'package:show_bazzar/Stream/stream_pages/stream_home_page.dart';
+
+import 'package:show_bazzar/reels/reels_page.dart';
+
+class myBottomNavBar extends StatefulWidget {
+  const myBottomNavBar({super.key});
+
+  @override
+  State<myBottomNavBar> createState() => _myBottomNavBarState();
+}
+
+class _myBottomNavBarState extends State<myBottomNavBar> {
+  int _selectedIndex = 0;
+  double bottomBarWidth = 42;
+  double bottomBarBorderWidth = 5;
+
+  final List<Widget> _pages = [
+    // Stream watch page
+    const StreamHomePage(),
+
+    // steam reels page
+    const ReelsPage(),
+
+    // steam profile page
+    const myProfile(),
+  ];
+  void pageUpdate(int a) {
+    setState(() {
+      _selectedIndex = a;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        selectedItemColor: const Color(0xFF6552FE),
+        unselectedItemColor: Colors.white,
+        backgroundColor: Colors.black,
+        iconSize: 28,
+        onTap: pageUpdate,
+        items: [
+          BottomNavigationBarItem(
+            icon: Container(
+              width: bottomBarWidth,
+              child: const Icon(Icons.home_outlined),
+            ),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Container(
+              width: bottomBarWidth,
+              child: const Icon(Icons.video_collection_outlined),
+            ),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Container(
+              width: bottomBarWidth,
+              child: const Icon(Icons.person_2_outlined),
+            ),
+            label: "",
+          ),
+        ],
+      ),
+    );
+  }
+}

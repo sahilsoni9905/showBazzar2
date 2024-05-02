@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:show_bazzar/Stream/stream_components/stream_colors.dart';
 import 'package:show_bazzar/Stream/stream_pages/creator_profile.dart';
 import 'package:show_bazzar/Stream/stream_pages/player2.dart';
-import 'package:show_bazzar/Stream/stream_pages/streaming_page.dart';
+
 import 'package:show_bazzar/Stream/streammodels/live_shows.dart';
 
 class liveShowsTile extends StatelessWidget {
@@ -25,7 +24,6 @@ class liveShowsTile extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-            width: 300,
             height: 180,
             child: GestureDetector(
               onTap: () {
@@ -66,7 +64,7 @@ class liveShowsTile extends StatelessWidget {
                               creatorProfilePage(profile: liveShows.profile)),
                     );
                   },
-                  child: Container(
+                  child: SizedBox(
                     width: liveShows.profile.profileIconSize,
                     child: ClipOval(
                       child: Image.asset(
@@ -84,6 +82,7 @@ class liveShowsTile extends StatelessWidget {
                   children: [
                     Text(
                       truncatedLiveNowTitle(liveShows.title),
+                      softWrap: true,
                       style: const TextStyle(color: Colors.white, fontSize: 20),
                     ),
                     Text(

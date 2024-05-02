@@ -33,8 +33,8 @@ class _startLiveScreenPageState extends State<startLiveScreenPage> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(Icons.arrow_back)),
-          title: Text('Start Streaming'),
+              icon: const Icon(Icons.arrow_back)),
+          title: const Text('Start Streaming'),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -47,7 +47,7 @@ class _startLiveScreenPageState extends State<startLiveScreenPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Title',
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 25),
@@ -70,12 +70,13 @@ class _startLiveScreenPageState extends State<startLiveScreenPage> {
                               radius: const Radius.circular(10),
                               dashPattern: const [10, 4],
                               strokeCap: StrokeCap.round,
-                              color: Color(0xFF6552FE),
+                              color: const Color(0xFF6552FE),
                               child: Container(
                                 width: double.infinity,
                                 height: 150,
                                 decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 206, 204, 222),
+                                    color: const Color.fromARGB(
+                                        255, 206, 204, 222),
                                     borderRadius: BorderRadius.circular(10)),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -84,7 +85,7 @@ class _startLiveScreenPageState extends State<startLiveScreenPage> {
                                         onPressed: () {
                                           _pickImageFromGallery();
                                         },
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.folder_open,
                                           color: Color(0xFF6552FE),
                                           size: 40,
@@ -92,7 +93,7 @@ class _startLiveScreenPageState extends State<startLiveScreenPage> {
                                     const SizedBox(
                                       height: 15,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Select your Thumbnail',
                                       style: TextStyle(
                                           fontSize: 15,
@@ -107,7 +108,7 @@ class _startLiveScreenPageState extends State<startLiveScreenPage> {
                   ],
                 ),
                 const SizedBox(
-                  height: 300,
+                  height: 250,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),
@@ -115,14 +116,14 @@ class _startLiveScreenPageState extends State<startLiveScreenPage> {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (ctx) => liveStreamingPage(),
+                          builder: (ctx) => const liveStreamingPage(),
                         ),
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF6552FE),
+                        backgroundColor: const Color(0xFF6552FE),
                         minimumSize: const Size(double.infinity, 40)),
-                    child: Text(
+                    child: const Text(
                       'Go Live',
                       style: TextStyle(color: Colors.white),
                     ),
@@ -140,9 +141,7 @@ class _startLiveScreenPageState extends State<startLiveScreenPage> {
     XFile? file = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (file != null) {
       imagePath = file.path;
-      setState(() {
-
-      });
+      setState(() {});
     }
   }
 }

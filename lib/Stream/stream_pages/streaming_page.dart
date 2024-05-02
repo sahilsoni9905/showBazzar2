@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:show_bazzar/Stream/streammodels/profile.dart';
 
 class streamingPage extends StatefulWidget {
@@ -21,7 +20,7 @@ class _streamingPageState extends State<streamingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 70, 67, 67),
+      backgroundColor: const Color.fromARGB(255, 70, 67, 67),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -51,12 +50,12 @@ class _streamingPageState extends State<streamingPage> {
 
                           Text(
                             truncatedNameTitle(widget.profile.Name),
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
                             ),
                           ),
-                          Text(
+                          const Text(
                             '300K+ Viewers',
                             style: TextStyle(
                               color: Colors.grey,
@@ -74,7 +73,7 @@ class _streamingPageState extends State<streamingPage> {
                 ElevatedButton(
                   onPressed: toogleFollowing,
                   style: ElevatedButton.styleFrom(
-                    fixedSize: Size(93, 10),
+                    fixedSize: const Size(93, 10),
                     backgroundColor:
                         widget.profile.following ? Colors.red : Colors.white,
                   ),
@@ -93,7 +92,7 @@ class _streamingPageState extends State<streamingPage> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.cancel,
                         color: Colors.white,
                       )),
@@ -130,7 +129,7 @@ class _streamingPageState extends State<streamingPage> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               // user name
@@ -167,7 +166,7 @@ class _streamingPageState extends State<streamingPage> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               // user name
@@ -204,7 +203,7 @@ class _streamingPageState extends State<streamingPage> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               // user name
@@ -241,7 +240,7 @@ class _streamingPageState extends State<streamingPage> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               // user name

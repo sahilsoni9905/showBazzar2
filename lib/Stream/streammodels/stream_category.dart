@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:show_bazzar/Stream/streammodels/live_shows.dart';
-import 'package:show_bazzar/Stream/streammodels/profile.dart';
 
 class streamCategory {
   String categoryName;

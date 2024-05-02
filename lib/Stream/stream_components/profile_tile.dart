@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:show_bazzar/Stream//stream_components/stream_colors.dart';
 import 'package:show_bazzar/Stream/stream_pages/creator_profile.dart';
 import 'package:show_bazzar/Stream/streammodels/profile.dart';
@@ -24,7 +23,7 @@ class ProfileTile extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               width: profile.profileIconSize,
               child: ClipOval(
                 child: Image.asset(

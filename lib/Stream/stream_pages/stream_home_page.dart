@@ -1,14 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:show_bazzar/Settings/my_profile/screens/my_profile_screen.dart';
 import 'package:show_bazzar/Stream/stream_components/my_bottom_nav_bar.dart';
+
 import 'package:show_bazzar/Stream/stream_components/stream_colors.dart';
-import 'package:show_bazzar/Stream/stream_pages/reels_page.dart';
-import 'package:show_bazzar/Stream/stream_pages/stream_profile_page.dart';
+
+import 'package:show_bazzar/Stream/stream_pages/search_page.dart';
+
 import 'package:show_bazzar/Stream/stream_pages/stream_watch_page.dart';
 import 'package:show_bazzar/Widgets/main_drawer.dart';
-
-
+import 'package:show_bazzar/reels/reels_page.dart';
 
 class StreamHomePage extends StatefulWidget {
   const StreamHomePage({super.key});
@@ -18,35 +18,34 @@ class StreamHomePage extends StatefulWidget {
 }
 
 class _StreamHomePageState extends State<StreamHomePage> {
-  // // the selected index to control the bottom nav bar
-  // int _selectedIndex = 0;
-  // // this method will update our selected index when the user taps on the bottom bar
-  // void navigateBottomBar(int index) {
-  //   setState(() {
-  //     _selectedIndex = index;
-  //   });
-  // }
-  //
-  // // list of pages
-  //
-  // final List<Widget> _pages = [
-  //   // Stream watch page
-  //   const StreamWatchPage(),
-  //
-  //   // steam reels page
-  //   const reelsPage(),
-  //
-  //   // steam profile page
-  //   const StreamProfilePage()
-  // ];
+  // the selected index to control the bottom nav bar
+  int _selectedIndex = 0;
+  // this method will update our selected index when the user taps on the bottom bar
+  void navigateBottomBar(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  // list of pages
+
+  final List<Widget> _pages = [
+    // Stream watch page
+    const StreamWatchPage(),
+
+    // steam reels page
+    const ReelsPage(),
+
+    // steam profile page
+    const myProfile(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: StremColors.streamBackground,
 
       // bottom Navigation bar
-
-
+      bottomNavigationBar: myBottomNavBar(),
       // app bar
       appBar: AppBar(
         backgroundColor: StremColors.streamBackground,
@@ -79,7 +78,12 @@ class _StreamHomePageState extends State<StreamHomePage> {
               //       size: 30,
               //     )),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SearchBarPage()),
+                    );
+                  },
                   icon: const Icon(
                     Icons.search_rounded,
                     color: Colors.white,
@@ -89,7 +93,6 @@ class _StreamHomePageState extends State<StreamHomePage> {
           )
         ],
       ),
-
 
       // drawer
 
@@ -216,8 +219,7 @@ class _StreamHomePageState extends State<StreamHomePage> {
       //   ),
       // ),
       drawer: const HomeDrawer(),
-      body: StreamWatchPage(),
-
+      body: _pages[_selectedIndex],
     );
     //
   }
